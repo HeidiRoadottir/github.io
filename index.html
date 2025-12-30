@@ -74,7 +74,7 @@
       color: var(--accent);
     }
 
-    /* PROJECT GRID FIX */
+    /* PROJECT GRID */
     .projects-grid {
       display: grid;
       gap: 18px;
@@ -85,12 +85,6 @@
       .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-    }
-
-    .project-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
     }
 
     /* PROJECT CARD */
@@ -104,7 +98,7 @@
     }
 
     .project:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: rgba(125,211,252,.45);
     }
 
@@ -133,6 +127,26 @@
 
     h1, h2, h3 { margin: 0 0 6px; }
 
+    /* READ MORE BUTTON */
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,184,.35);
+      background: rgba(15,23,42,.8);
+      color: #7dd3fc;
+      font-size: .85rem;
+      text-decoration: none;
+      transition: all .18s ease-out;
+    }
+
+    .read-more:hover {
+      border-color: rgba(125,211,252,.7);
+      background: rgba(2,6,23,.9);
+      color: white;
+    }
+
     footer {
       margin-top: 40px;
       padding-top: 10px;
@@ -160,105 +174,99 @@
 <section id="projects">
   <h2>Projects</h2>
   <p class="section-intro">
-    A mix of bachelor and master level work spanning NLP, sports analytics, critical design, tangible
-    interaction and RPA.
+    A mix of bachelor and master level work spanning NLP, sports analytics, critical design,
+    tangible interaction and RPA.
   </p>
 
   <div class="projects-grid">
 
     <!-- 2025 - BKK -->
-    <a href="bbk.html" class="project-link">
-      <article class="project">
-        <h3>RPA in Barnabókaklubbin – Automation in a Children’s Book Club</h3>
-        <p class="project-meta">2025 · Master project · Digital transformation & RPA</p>
-        <p class="role"><strong>My role:</strong> Interviews, process mapping, design of automation approach and evaluation.</p>
-        <p>
-          Barnabókaklubbin is a Faroese children’s book club with fragmented systems and highly manual administration.
-          This project investigates how RPA can reduce repetitive work while respecting human judgement.
-        </p>
-        <div>
-          <span class="pill">RPA</span>
-          <span class="pill">Power Automate</span>
-          <span class="pill">Blueprinting</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>RPA in Barnabókaklubbin – Automation in a Children’s Book Club</h3>
+      <p class="project-meta">2025 · Master project · Digital transformation & RPA</p>
+      <p class="role"><strong>My role:</strong> Interviews, process mapping, design of automation approach and evaluation.</p>
+      <p>
+        Barnabókaklubbin is a Faroese children’s book club with fragmented systems and highly manual administration.
+        This project investigates how RPA can reduce repetitive work while respecting human judgement.
+      </p>
+      <div>
+        <span class="pill">RPA</span>
+        <span class="pill">Power Automate</span>
+        <span class="pill">Blueprinting</span>
+      </div>
+      <a href="bbk.html" class="read-more">Read more →</a>
+    </article>
 
     <!-- 2025 - Sunflower -->
-    <a href="sunflower.html" class="project-link">
-      <article class="project">
-        <h3>Det man ikke ser – Critical Design on the Sunflower Lanyard</h3>
-        <p class="project-meta">2025 · Master semester project · Critical & speculative design</p>
-        <p class="role"><strong>My role:</strong> Research, experiment design and critical reflection.</p>
-        <p>
-          Investigating how the sunflower lanyard for hidden disabilities is interpreted — and how it can both support and stigmatise.
-        </p>
-        <div>
-          <span class="pill">Critical design</span>
-          <span class="pill">Speculative</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>Det man ikke ser – Critical Design on the Sunflower Lanyard</h3>
+      <p class="project-meta">2025 · Master semester project · Critical & speculative design</p>
+      <p class="role"><strong>My role:</strong> Research, experiment design and critical reflection.</p>
+      <p>
+        Investigating how the sunflower lanyard for hidden disabilities is interpreted — and how it can both support and stigmatise.
+      </p>
+      <div>
+        <span class="pill">Critical design</span>
+        <span class="pill">Speculative</span>
+      </div>
+      <a href="sunflower.html" class="read-more">Read more →</a>
+    </article>
 
     <!-- EchoGuide -->
-    <a href="echoguide.html" class="project-link">
-      <article class="project">
-        <h3>EchoGuide – Accessible Museum Companion</h3>
-        <p class="project-meta">2024 · Master project · UX & accessibility</p>
-        <p class="role"><strong>My role:</strong> Concept & prototype development</p>
-        <p>
-          Audio-based museum companion improving accessibility through inclusive interaction design.
-        </p>
-        <div>
-          <span class="pill">UX</span>
-          <span class="pill">Accessibility</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>EchoGuide – Accessible Museum Companion</h3>
+      <p class="project-meta">2024 · Master project · UX & accessibility</p>
+      <p class="role"><strong>My role:</strong> Concept & prototype development</p>
+      <p>
+        Audio-based museum companion improving accessibility through inclusive interaction design.
+      </p>
+      <div>
+        <span class="pill">UX</span>
+        <span class="pill">Accessibility</span>
+      </div>
+      <a href="echoguide.html" class="read-more">Read more →</a>
+    </article>
 
     <!-- LumiBreath -->
-    <a href="lumibreath.html" class="project-link">
-      <article class="project">
-        <h3>LumiBreath – Interactive Breathing Lamp</h3>
-        <p class="project-meta">2024 · Tangible interaction</p>
-        <p class="role"><strong>My role:</strong> Concept, design & interaction</p>
-        <p>
-          Physical-digital lamp guiding breathing to support calmness & emotional regulation.
-        </p>
-        <div>
-          <span class="pill">Interaction Design</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>LumiBreath – Interactive Breathing Lamp</h3>
+      <p class="project-meta">2024 · Tangible interaction</p>
+      <p class="role"><strong>My role:</strong> Concept, design & interaction</p>
+      <p>
+        Physical-digital lamp guiding breathing to support calmness & emotional regulation.
+      </p>
+      <div>
+        <span class="pill">Interaction Design</span>
+      </div>
+      <a href="lumibreath.html" class="read-more">Read more →</a>
+    </article>
 
     <!-- Knowable -->
-    <a href="knowable.html" class="project-link">
-      <article class="project">
-        <h3>Knowable – Trustpilot Review Insights</h3>
-        <p class="project-meta">2023 · Bachelor project · NLP / R</p>
-        <p>
-          Analysing text behind Trustpilot star ratings using sentiment + topic modelling.
-        </p>
-        <div>
-          <span class="pill">R</span>
-          <span class="pill">NLP</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>Knowable – Trustpilot Review Insights</h3>
+      <p class="project-meta">2023 · Bachelor project · NLP / R</p>
+      <p>
+        Analysing text behind Trustpilot star ratings using sentiment + topic modelling.
+      </p>
+      <div>
+        <span class="pill">R</span>
+        <span class="pill">NLP</span>
+      </div>
+      <a href="knowable.html" class="read-more">Read more →</a>
+    </article>
 
     <!-- Brøndby -->
-    <a href="brondby.html" class="project-link">
-      <article class="project">
-        <h3>Brøndby IF – Data-Driven Football Analytics</h3>
-        <p class="project-meta">2022 · Bachelor project · Sports analytics</p>
-        <p>
-          Expected Goals modelling & performance insight using match event data.
-        </p>
-        <div>
-          <span class="pill">Sports analytics</span>
-        </div>
-      </article>
-    </a>
+    <article class="project">
+      <h3>Brøndby IF – Data-Driven Football Analytics</h3>
+      <p class="project-meta">2022 · Bachelor project · Sports analytics</p>
+      <p>
+        Expected Goals modelling & performance insight using match event data.
+      </p>
+      <div>
+        <span class="pill">Sports analytics</span>
+      </div>
+      <a href="brondby.html" class="read-more">Read more →</a>
+    </article>
 
   </div>
 </section>
