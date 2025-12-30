@@ -5,34 +5,298 @@
   <title>Heidi Lindenskov Róadóttir – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
-    h1 { font-size: 2.2rem; margin-bottom: 0.2rem; }
-    h2 { margin-top: 2rem; }
-    .project { margin-bottom: 1.5rem; }
-    .tag { font-size: 0.8rem; padding: 2px 6px; border-radius: 999px; border: 1px solid #ddd; margin-right: 4px; }
+    :root {
+      --accent: #1f4b82;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 16px 60px;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+    }
+    header {
+      margin-bottom: 2.5rem;
+    }
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.3rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+    h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+    p {
+      margin: 0.1rem 0 0.6rem;
+    }
+    .tagline {
+      color: #555;
+      max-width: 32rem;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+    .pill--strong {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-intro {
+      max-width: 40rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .projects {
+      display: grid;
+      gap: 1.4rem;
+    }
+    @media (min-width: 800px) {
+      .projects {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .project {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      border: 1px solid #eee;
+    }
+    .project-meta {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.35rem;
+    }
+    .role {
+      font-size: 0.85rem;
+      color: #444;
+      margin-bottom: 0.35rem;
+    }
+    .methods {
+      margin-bottom: 0.4rem;
+    }
+    .methods .pill {
+      background: #f6f6f6;
+    }
+    .layout-split {
+      display: grid;
+      gap: 1rem 2rem;
+    }
+    @media (min-width: 900px) {
+      .layout-split {
+        grid-template-columns: 2fr 1.2fr;
+      }
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.3rem 0 0;
+      font-size: 0.95rem;
+    }
+    .contact-list li {
+      margin-bottom: 0.2rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #777;
+    }
   </style>
 </head>
 <body>
-  <h1>Heidi Lindenskov Róadóttir</h1>
-  <p>Digital transformation, UX & data-driven design.</p>
+  <header>
+    <div class="layout-split">
+      <div>
+        <h1>Heidi Lindenskov Róadóttir</h1>
+        <p class="tagline">
+          Digital transformation student with a hybrid profile in <strong>UX & critical design</strong>,
+          <strong>data analysis</strong> and <strong>automation</strong>. I work across qualitative and
+          quantitative methods to explore how technology can support people, organisations and everyday life.
+        </p>
+        <div style="margin-top: 0.6rem;">
+          <span class="pill pill--strong">Digital Transformation</span>
+          <span class="pill">UX & Interaction Design</span>
+          <span class="pill">Data & Analytics</span>
+          <span class="pill">RPA & Automation</span>
+        </div>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/your-profile</a></li>
+          <li>Location: Faroe Islands / Denmark</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-  <h2>Selected projects</h2>
+  <section>
+    <h2>Selected projects</h2>
+    <p class="section-intro">
+      A selection of academic and exploratory projects spanning bachelor and master level work,
+      from data-driven analysis and automation to speculative and embodied interaction design.
+    </p>
 
-  <div class="project">
-    <h3>Knowable – Trustpilot Review Analysis</h3>
-    <p><span class="tag">NLP</span><span class="tag">R</span><span class="tag">Web scraping</span></p>
-    <p>A platform that scrapes and analyses Trustpilot reviews to go beyond the 1–5 star rating and give a deeper understanding of customer experience.</p>
-  </div>
+    <div class="projects">
 
-  <div class="project">
-    <h3>EchoGuide – Accessible Museum Companion</h3>
-    <p><span class="tag">UX</span><span class="tag">Accessibility</span><span class="tag">Prototyping</span></p>
-    <p>A mobile concept that uses audio guidance and recognition to support visually impaired visitors and other audiences in navigating museum content.</p>
-  </div>
+      <!-- Knowable -->
+      <article class="project">
+        <h3>Knowable – Trustpilot Review Analysis Platform</h3>
+        <p class="project-meta">Bachelor project · Data analysis, NLP & web scraping</p>
+        <p class="role"><strong>My role:</strong> Concept, data pipeline, text analysis and prototype.</p>
+        <p>
+          Knowable challenges the idea that a 1–5 star Trustpilot score fully reflects customer experience.
+          I built a web scraping and text analysis pipeline in R that collects reviews, runs sentiment and topic
+          modelling, and presents a richer overview of what customers actually say about a company.
+        </p>
+        <div class="methods">
+          <span class="pill">R</span>
+          <span class="pill">Web scraping</span>
+          <span class="pill">NLP</span>
+          <span class="pill">Sentiment analysis</span>
+          <span class="pill">Topic modelling</span>
+          <span class="pill">Shiny</span>
+        </div>
+      </article>
 
-  <!-- You can copy/paste more project blocks here for LumiBreath, Solsikkeprojektet, Brøndby IF, Barnabókaklubbin, etc. -->
+      <!-- EchoGuide -->
+      <article class="project">
+        <h3>EchoGuide – Accessible Museum Companion</h3>
+        <p class="project-meta">Master project · UX, accessibility & iterative prototyping</p>
+        <p class="role"><strong>My role:</strong> Concept development, interaction design and prototype testing.</p>
+        <p>
+          EchoGuide explores how museums can be more inclusive for visitors with visual impairments and other needs.
+          Through several design iterations, we developed a mobile concept that uses audio guidance and recognition
+          to read out exhibition information and support independent navigation, with scalability to other audiences
+          such as children and dyslexic visitors.
+        </p>
+        <div class="methods">
+          <span class="pill">Design sprint</span>
+          <span class="pill">UX</span>
+          <span class="pill">Accessibility</span>
+          <span class="pill">Prototyping</span>
+          <span class="pill">p5.js</span>
+        </div>
+      </article>
 
-  <h2>Contact</h2>
-  <p>Email: yourmail@example.com · LinkedIn: your-link-here</p>
+      <!-- LumiBreath -->
+      <article class="project">
+        <h3>LumiBreath – Interactive Breathing Lamp</h3>
+        <p class="project-meta">Digital Designer course · Tangible interaction & wellbeing</p>
+        <p class="role"><strong>My role:</strong> Co-design of concept, interaction and documentation.</p>
+        <p>
+          LumiBreath is a physical-digital lamp that guides users through calming breathing exercises using light
+          rhythms and motion. The project investigates how embodied interaction and everyday artefacts can support
+          stress reduction and emotional regulation, drawing on third-wave HCI and theories of perception and
+          embodiment.
+        </p>
+        <div class="methods">
+          <span class="pill">Interaction design</span>
+          <span class="pill">Embodied interaction</span>
+          <span class="pill">Physical prototyping</span>
+          <span class="pill">Arduino / hardware</span>
+        </div>
+      </article>
+
+      <!-- Det man ikke ser / Solsikkesnoren -->
+      <article class="project">
+        <h3>Det man ikke ser – Critical Design on the Sunflower Lanyard</h3>
+        <p class="project-meta">Master semester project · Critical & speculative design</p>
+        <p class="role"><strong>My role:</strong> Research, experiment design and critical reflection.</p>
+        <p>
+          This project investigates how the sunflower lanyard for hidden disabilities is interpreted in public space,
+          and how it can both support and stigmatise its wearers. Through critical and speculative design experiments,
+          we used prototypes as “social mirrors” to expose assumptions, the politics of staring, and the embodied
+          experience of being visibly marked as different.
+        </p>
+        <div class="methods">
+          <span class="pill">Critical design</span>
+          <span class="pill">Speculative design</span>
+          <span class="pill">Research-through-design</span>
+          <span class="pill">Stigma & disability studies</span>
+        </div>
+      </article>
+
+      <!-- Brøndby IF -->
+      <article class="project">
+        <h3>Brøndby IF – Data-Driven Football Analytics</h3>
+        <p class="project-meta">Bachelor project · Sports analytics & statistics</p>
+        <p class="role"><strong>My role:</strong> Data preparation, modelling and interpretation.</p>
+        <p>
+          In this project, we developed an Expected Goals (xG) model and a set of analytical tools to support
+          decision-making in Brøndby IF. Using detailed event data, we analysed shot quality, patterns of play
+          and player behaviour to show how data can complement football intuition with more systematic insight.
+        </p>
+        <div class="methods">
+          <span class="pill">R</span>
+          <span class="pill">Predictive modelling</span>
+          <span class="pill">Clustering</span>
+          <span class="pill">Sports analytics</span>
+          <span class="pill">Visualisation</span>
+        </div>
+      </article>
+
+      <!-- Barnabókaklubbin RPA -->
+      <article class="project">
+        <h3>RPA in Barnabókaklubbin – Automation in a Children’s Book Club</h3>
+        <p class="project-meta">Master project · Digital transformation & RPA</p>
+        <p class="role"><strong>My role:</strong> Interviews, process mapping, design of automation approach and evaluation.</p>
+        <p>
+          Barnabókaklubbin is a Faroese children’s book club with fragmented systems and highly manual administration.
+          This project investigates how Robotic Process Automation can reduce repetitive work while respecting
+          local practices and human judgement. We mapped membership workflows, assessed data quality and tested
+          a selective automation design using RPA as a supportive layer rather than a full replacement.
+        </p>
+        <div class="methods">
+          <span class="pill">Service blueprinting</span>
+          <span class="pill">RPA</span>
+          <span class="pill">Power Automate</span>
+          <span class="pill">Qualitative research</span>
+          <span class="pill">Digital transformation</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Focus & interests</h2>
+    <p class="section-intro">
+      Across my work I am especially interested in how data, automation and design meet in practice:
+      how organisations actually work, how people experience technology, and how we can design
+      digital solutions that respect context, embodiment and everyday life.
+    </p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Heidi Lindenskov Róadóttir
+  </footer>
+
+  <script>
+    // Small helper to always show the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
