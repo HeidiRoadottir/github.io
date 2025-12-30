@@ -1,138 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Knowable – Heidi Lindenskov Róadóttir</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-  background: #020617;
-  color: #e5e7eb;
-  line-height: 1.7;
-}
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 30px 16px 60px;
-}
-
-a {
-  color: #7dd3fc;
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.back {
-  font-size: .9rem;
-  opacity: .85;
-}
-
-h1 {
-  margin-bottom: 6px;
-}
-
-.meta {
-  color: #9ca3af;
-  font-size: .9rem;
-  margin-bottom: 20px;
-}
-
-.card {
-  background: #0f172a;
-  border: 1px solid rgba(148,163,184,.25);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.pill {
-  display: inline-block;
-  font-size: .8rem;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,.4);
-  margin-right: 4px;
-}
-
-footer {
-  margin-top: 40px;
-  color: #9ca3af;
-  font-size: .8rem;
-  text-align: center;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>RPA in Barnabókaklubbin – Automation in a Children’s Book Club · Heidi Lindenskov Róadóttir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+    main { max-width: 900px; margin: 0 auto; padding: 28px 16px 60px; }
+    a { color: #7dd3fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back { font-size: 0.9rem; color: #9ca3af; }
+    h1 { margin: 10px 0 4px; font-size: clamp(2rem, 3vw, 2.3rem); }
+    .meta { font-size: 0.9rem; color: #9ca3af; margin-bottom: 18px; }
+    .hero-sub { color: #cbd5f5; max-width: 42rem; margin-bottom: 20px; }
+    .pill {
+      display: inline-block; font-size: 0.8rem; padding: 3px 8px;
+      border-radius: 999px; border: 1px solid rgba(148,163,184,.4);
+      margin-right: 6px; margin-bottom: 6px; background: #020617;
+    }
+    .layout { display: grid; gap: 18px; margin-top: 16px; }
+    @media (min-width: 820px) {
+      .layout { grid-template-columns: 3fr 2fr; }
+    }
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,.25);
+      padding: 16px 16px 14px;
+      margin-bottom: 14px;
+    }
+    .card h2 { margin-top: 0; margin-bottom: 6px; font-size: 1.1rem; }
+    .side-card {
+      background: radial-gradient(circle at top left, #1e293b, #020617);
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,.3);
+      padding: 14px 16px 12px;
+      font-size: 0.92rem;
+      color: #cbd5f5;
+    }
+    .side-card h3 { margin-top: 0; margin-bottom: 4px; font-size: 1rem; }
+    figure {
+      margin: 0 0 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,.25);
+      background: #020617;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    figure img { width: 100%; display: block; }
+    figure figcaption { padding: 8px 10px; }
+    footer {
+      margin-top: 32px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148,163,184,.25);
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
-<main>
+  <main>
+    <a href="index.html#projects" class="back">← Back to projects</a>
 
-  <div class="header">
-    <div>
-      <a class="back" href="index.html">← Back to Projects</a>
+    <h1>RPA in Barnabókaklubbin – Automation in a Children’s Book Club</h1>
+    <div class="meta">
+      Master project · Digital transformation · RPA · Data & process mapping
     </div>
-  </div>
 
-  <h1>Knowable – Trustpilot Review Analysis Platform</h1>
-
-  <div class="meta">
-    Bachelor Project · NLP · R · Data Analysis
-  </div>
-
-  <div class="card">
-    <h3>Overview</h3>
-    <p>
-      Knowable challenges the idea that star ratings alone reflect customer experience.
-      I built a data pipeline that scrapes Trustpilot reviews, applies NLP sentiment
-      and topic modelling, and presents deeper insights into what customers actually say.
+    <p class="hero-sub">
+      Barnabókaklubbin is a Faroese children’s book club whose daily operations depend
+      heavily on manual coordination across several loosely connected systems. This project
+      investigates how Robotic Process Automation (RPA) can support their membership
+      administration without undermining the human judgement that keeps everything running.
     </p>
-  </div>
 
-  <div class="card">
-    <h3>My Role</h3>
-    <ul>
-      <li>Concept development</li>
-      <li>Data pipeline development in R</li>
-      <li>Web scraping & data cleaning</li>
-      <li>Sentiment and topic modelling</li>
-      <li>Prototype of insight presentation</li>
-    </ul>
-  </div>
+    <div>
+      <span class="pill">Service blueprinting</span>
+      <span class="pill">Process mapping</span>
+      <span class="pill">RPA</span>
+      <span class="pill">Power Automate</span>
+      <span class="pill">Qualitative research</span>
+      <span class="pill">Digital transformation</span>
+    </div>
 
-  <div class="card">
-    <h3>Tools & Methods</h3>
-    <span class="pill">R</span>
-    <span class="pill">NLP</span>
-    <span class="pill">Sentiment Analysis</span>
-    <span class="pill">Topic Modelling</span>
-    <span class="pill">Web Scraping</span>
-  </div>
+    <div class="layout">
+      <div>
+        <div class="card">
+          <h2>Context & problem</h2>
+          <p>
+            The club manages memberships, payments and book shipments using a mix of
+            web forms, spreadsheets, Navision/Business Central and email. Because the
+            systems do not fully talk to each other, staff rely on:
+          </p>
+          <ul>
+            <li>Manual data entry across multiple platforms.</li>
+            <li>Personal knowledge of “how things are usually done”.</li>
+            <li>Continuous checking to catch errors and exceptions.</li>
+          </ul>
+          <p>
+            This creates both workload and vulnerability: if the person with the overview
+            is away, operations become fragile.
+          </p>
+        </div>
 
-  <div class="card">
-    <h3>Outcome</h3>
-    <p>
-      The project demonstrated how text-based review analysis reveals deeper insights than ratings,
-      supporting smarter decisions for both companies and consumers.
-    </p>
-  </div>
+        <div class="card">
+          <h2>My role</h2>
+          <ul>
+            <li>Conducted and analysed interviews with key staff members.</li>
+            <li>Co-developed service blueprints of current and future membership flows.</li>
+            <li>Helped identify which process steps were suitable for RPA.</li>
+            <li>Contributed to designing and testing a small RPA proof-of-concept.</li>
+            <li>Worked on evaluation and reflection on organisational implications.</li>
+          </ul>
+        </div>
 
-  <footer>
-    © <span id="year"></span> Heidi Lindenskov Róadóttir
-  </footer>
-</main>
+        <div class="card">
+          <h2>Process & approach</h2>
+          <h3>Understanding current practice</h3>
+          <p>
+            We started by mapping how new memberships are created, updated and cancelled
+            in practice – not just in formal descriptions. Interviews and blueprinting
+            revealed extensive manual work and “glue tasks” performed by staff to keep
+            data consistent.
+          </p>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+          <h3>Assessing automation potential</h3>
+          <p>
+            We analysed which steps were:
+          </p>
+          <ul>
+            <li>Rule-based and repetitive (good RPA candidates).</li>
+            <li>Exception-heavy and highly dependent on judgement (less suitable).</li>
+          </ul>
+          <p>
+            Membership registration emerged as a promising area, provided that data
+            quality and exception handling were carefully considered.
+          </p>
 
+          <h3>RPA proof-of-concept</h3>
+          <p>
+            Using Power Automate, we prototyped an automation that:
+          </p>
+          <ul>
+            <li>Reads membership form submissions.</li>
+            <li>Transfers data into relevant systems.</li>
+            <li>Reduces duplicate typing and basic copy-paste work.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Outcome & insights</h2>
+          <p>
+            The project proposes a selective, modular automation strategy:
+          </p>
+          <ul>
+            <li>RPA as a <strong>supporting layer</strong>, not a full replacement for staff.</li>
+            <li>Focus on stabilising routine flows before tackling complex edge cases.</li>
+            <li>Continuous involvement of staff to surface tacit knowledge and exceptions.</li>
+          </ul>
+          <p>
+            We show that in small, low-maturity organisations, “big bang” automation
+            is less realistic than incremental, context-sensitive changes.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Reflections & learnings</h2>
+          <p>
+            This project strengthened my ability to connect technical automation options
+            (RPA) with organisational realities and data quality concerns. It also gave
+            me experience designing automation in a way that respects human expertise
+            instead of trying to replace it.
+          </p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="side-card">
+          <h3>Project snapshot</h3>
+          <p><strong>Type:</strong> 3rd semester Master project</p>
+          <p><strong>Case:</strong> Barnabókaklubbin (Faroese children’s book club)</p>
+          <p><strong>Focus:</strong> RPA, small-scale digitalisation, island context</p>
+        </div>
+
+        <figure>
+          <img src="images/bkk-blueprint-placeholder.png" alt="Placeholder for service blueprint or RPA flow">
+          <figcaption>
+            Placeholder for a service blueprint or RPA flow diagram showing membership registration.
+          </figcaption>
+        </figure>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Heidi Lindenskov Róadóttir
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
