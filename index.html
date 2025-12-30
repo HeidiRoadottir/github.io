@@ -692,10 +692,7 @@
 </section>
   
   <!-- CONTACT -->
-  <form
-  action="https://formspree.io/f/mdaorprl"
-  method="POST"
->
+<form id="contactForm" method="POST">
   <div class="form-row">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -711,12 +708,9 @@
     <textarea id="message" name="message" placeholder="What would you like to talk about?" required></textarea>
   </div>
 
-  <!-- optional ekstra info til dig -->
-  <input type="hidden" name="_subject" value="New message from portfolio site" />
-  <!-- hvis du vil redirecte tilbage til din side efter submit -->
-  <!-- <input type="hidden" name="_next" value="https://ditdomæne.github.io/thanks.html" /> -->
-
   <button type="submit" class="btn-submit">Send message</button>
+
+  <div id="form-status" style="margin-top:8px; font-size:0.9rem;"></div>
 </form>
 
     </div>
@@ -759,6 +753,45 @@ filterButtons.forEach(button => {
   });
 });
 </script>
+
+  <script>
+const form = document.getElementById("contactForm");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  // BYT DENNE UD MED DIN FORM URL
+  const endpoint = "https://formspree.io/f/mdaorprl"; 
+
+  status.style.color = "#9ca3af";
+  status.textContent = "Sending message…";
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      status.style.color = "#7dd3fc";
+      status.textContent = "Thank you! Your message has been sent.";
+      form.reset();   // ← tømmer felterne
+    } else {
+      status.style.color = "#f87171";
+      status.textContent = "Something went wrong. Please try again later.";
+    }
+
+  } catch (err) {
+    status.style.color = "#f87171";
+    status.textContent = "Network error. Please try again.";
+  }
+});
+</script>
+
 
 </body>
 </html>
