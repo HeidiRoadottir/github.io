@@ -1,190 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Det man ikke ser – Sunflower Lanyard & Stigma · Heidi Lindenskov Róadóttir</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      line-height: 1.7;
-    }
-    main { max-width: 900px; margin: 0 auto; padding: 28px 16px 60px; }
-    a { color: #7dd3fc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .back { font-size: 0.9rem; color: #9ca3af; }
-    h1 { margin: 10px 0 4px; font-size: clamp(2rem, 3vw, 2.3rem); }
-    .meta { font-size: 0.9rem; color: #9ca3af; margin-bottom: 18px; }
-    .hero-sub { color: #cbd5f5; max-width: 42rem; margin-bottom: 20px; }
-    .pill {
-      display: inline-block; font-size: 0.8rem; padding: 3px 8px;
-      border-radius: 999px; border: 1px solid rgba(148,163,184,.4);
-      margin-right: 6px; margin-bottom: 6px; background: #020617;
-    }
-    .layout { display: grid; gap: 18px; margin-top: 16px; }
-    @media (min-width: 820px) {
-      .layout { grid-template-columns: 3fr 2fr; }
-    }
-    .card {
-      background: #020617;
-      border-radius: 14px;
-      border: 1px solid rgba(148,163,184,.25);
-      padding: 16px 16px 14px;
-      margin-bottom: 14px;
-    }
-    .card h2 { margin-top: 0; margin-bottom: 6px; font-size: 1.1rem; }
-    .side-card {
-      background: radial-gradient(circle at top left, #1e293b, #020617);
-      border-radius: 14px;
-      border: 1px solid rgba(148,163,184,.3);
-      padding: 14px 16px 12px;
-      font-size: 0.92rem;
-      color: #cbd5f5;
-    }
-    .side-card h3 { margin-top: 0; margin-bottom: 4px; font-size: 1rem; }
-    figure {
-      margin: 0 0 12px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(148,163,184,.25);
-      background: #020617;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-    figure img { width: 100%; display: block; }
-    figure figcaption { padding: 8px 10px; }
-    footer {
-      margin-top: 32px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(148,163,184,.25);
-      font-size: 0.8rem;
-      color: #9ca3af;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Det man ikke ser – Sunflower Lanyard & Stigma · Heidi Lindenskov Róadóttir</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --text-main:#111827;
+  --text-muted:#6b7280;
+  --accent:#111827;
+  --border:#e5e7eb;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text-main);
+  line-height:1.7;
+}
+
+main{
+  max-width:1040px;
+  margin:0 auto;
+  padding:28px 18px 60px;
+}
+
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.back{
+  font-size:0.9rem;
+  color:var(--text-muted);
+  display:inline-block;
+  margin-bottom:8px;
+}
+
+h1{
+  margin:10px 0 4px;
+  font-size:clamp(2.1rem,3vw,2.6rem);
+  font-weight:600;
+}
+
+.meta{
+  font-size:0.9rem;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+
+.hero-sub{
+  color:var(--text-muted);
+  max-width:42rem;
+  margin-bottom:12px;
+  font-size:0.98rem;
+}
+
+.pill{
+  display:inline-block;
+  font-size:0.8rem;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text-muted);
+  margin:0 6px 6px 0;
+}
+
+/* layout */
+.layout{
+  display:grid;
+  gap:18px;
+  margin-top:16px;
+}
+@media(min-width:880px){
+  .layout{
+    grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+  }
+}
+
+/* cards */
+.card{
+  background:var(--card);
+  border-radius:12px;
+  border:1px solid var(--border);
+  padding:16px 16px 14px;
+  margin-bottom:14px;
+  font-size:0.96rem;
+}
+
+.card h2{
+  margin:0 0 6px;
+  font-size:1.1rem;
+  font-weight:600;
+}
+
+.card h3{
+  margin:8px 0 4px;
+  font-size:0.95rem;
+  font-weight:600;
+  color:var(--accent);
+}
+
+.card ul{
+  padding-left:1.2rem;
+}
+
+/* side */
+.side-card{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid var(--border);
+  padding:14px;
+  font-size:0.9rem;
+  color:var(--text-muted);
+  margin-bottom:14px;
+}
+
+.side-card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--accent);
+}
+
+figure{
+  margin:0 0 12px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  font-size:0.8rem;
+  color:var(--text-muted);
+  background:#e5e7eb;
+}
+
+figure img{
+  width:100%;
+  display:block;
+}
+
+figure figcaption{
+  padding:8px 10px;
+}
+
+footer{
+  margin-top:32px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  font-size:0.8rem;
+  color:var(--text-muted);
+  text-align:center;
+}
+</style>
 </head>
+
 <body>
-  <main>
-    <a href="index.html#projects" class="back">← Back to projects</a>
+<main>
 
-    <h1>Det man ikke ser – Sunflower Lanyard & Stigma</h1>
-    <div class="meta">
-      Master semester project · Critical & speculative design · Disability & stigma
-    </div>
+<a href="index.html#projects" class="back">← Back to projects</a>
 
-    <p class="hero-sub">
-      The sunflower lanyard is meant to discreetly signal that the wearer has an invisible
-      disability and may need extra understanding. This project investigates how the lanyard
-      is actually interpreted in public space – and how it can both support and stigmatise
-      the people who wear it.
-    </p>
+<h1>Det man ikke ser — Sunflower Lanyard & Stigma</h1>
+<div class="meta">
+  Master semester project · Critical & speculative design · Disability & stigma
+</div>
 
-    <div>
-      <span class="pill">Critical design</span>
-      <span class="pill">Speculative design</span>
-      <span class="pill">Research-through-design</span>
-      <span class="pill">Stigma & disability studies</span>
-      <span class="pill">Embodiment</span>
-    </div>
+<p class="hero-sub">
+  The sunflower lanyard is designed to discreetly signal hidden disabilities. While
+  intended to support understanding, it also exposes wearers to interpretation,
+  staring, role expectations and stigma. This project explores how the symbol is
+  read in public space — and how visibility can feel both protective and exposing.
+</p>
 
-    <div class="layout">
-      <div>
-        <div class="card">
-          <h2>Context & problem framing</h2>
-          <p>
-            The sunflower lanyard has spread widely as a symbol for hidden disabilities.
-            Many wearers and relatives describe it as helpful – but it also comes with
-            ambiguous reactions: curious stares, misunderstandings, or feelings of not
-            wanting to “out” oneself in public.
-          </p>
-          <p>
-            Our group has personal connections to the lanyard, which informed the project’s
-            motivation: to explore how it is read by others, and how it shapes the
-            embodied experience of being visible as “different”.
-          </p>
-        </div>
+<div>
+  <span class="pill">Critical design</span>
+  <span class="pill">Speculative design</span>
+  <span class="pill">Research-through-design</span>
+  <span class="pill">Stigma & disability</span>
+  <span class="pill">Qualitative analysis</span>
+</div>
 
-        <div class="card">
-          <h2>My role</h2>
-          <ul>
-            <li>Co-developed the problem framing around visibility, stigma and control.</li>
-            <li>Contributed to the design and execution of critical design experiments.</li>
-            <li>Participated in analysis of responses and experiential reflections.</li>
-            <li>Helped connect theory (e.g. Goffman, Garland-Thomson) to design outcomes.</li>
-          </ul>
-        </div>
+<div class="layout">
+<div>
 
-        <div class="card">
-          <h2>Design experiments</h2>
-          <h3>Exploratory experiments</h3>
-          <p>
-            Early experiments explored how people perceive images of sunflower lanyard
-            wearers, what assumptions they make, and how the lanyard functions as a
-            social symbol. Surveys and visual materials were used to surface stereotypes.
-          </p>
+<div class="card">
+  <h2>Context</h2>
+  <p>
+    The sunflower lanyard has become widely recognised as a way to signal invisible
+    disability. However, it does not simply “explain” a condition — it also frames
+    how others are allowed to look, judge and react. Many wearers describe both relief
+    and discomfort: support in some situations, social exposure in others.
+  </p>
+  <p>
+    Our project investigates how meaning is produced around the lanyard: what people
+    assume, how they react and how the symbol reshapes everyday situations in subtle,
+    emotional and embodied ways.
+  </p>
+</div>
 
-          <h3>“Boxed stigma” & public interventions</h3>
-          <p>
-            Later prototypes functioned as “social mirrors”: critical artefacts and
-            setups that intentionally made staring, judgement and discomfort more visible.
-            These were tested in semi-public contexts to observe reactions and facilitate
-            discussion about who has the power to look and to label.
-          </p>
-        </div>
+<div class="card">
+  <h2>Research focus</h2>
+  <p>
+    Instead of evaluating the lanyard as a “solution”, the project asks:
+  </p>
+  <ul>
+    <li>How does the sunflower symbol shape visibility and identity?</li>
+    <li>When does it support care — and when does it invite judgement?</li>
+    <li>Who has the power to look, interpret and define others?</li>
+  </ul>
+  <p>
+    The work draws on disability studies, stigma theory (incl. Goffman) and critical
+    design to explore social dynamics rather than fix them.
+  </p>
+</div>
 
-        <div class="card">
-          <h2>Outcome & contribution</h2>
-          <p>
-            Instead of proposing a “better lanyard”, the project uses design to:
-          </p>
-          <ul>
-            <li>Expose the ambivalence of visibility for people with hidden disabilities.</li>
-            <li>Show how the sunflower symbol can both protect and mark out the wearer.</li>
-            <li>Invite reflection on who is allowed to stare, interpret and define others.</li>
-          </ul>
-          <p>
-            The work positions critical design as a way of negotiating social norms
-            rather than solving them, contributing to discussions on inclusive design
-            and disability representation.
-          </p>
-        </div>
+<div class="card">
+  <h2>My role – Technical & analytical lead</h2>
+  <p>
+    I was responsible for the technical and analytical backbone of the project:
+  </p>
+  <ul>
+    <li>Designing and structuring the research-through-design process.</li>
+    <li>Developing digital and physical experiment setups.</li>
+    <li>Collecting data from public interactions and participant responses.</li>
+    <li>Performing qualitative coding and thematic analysis.</li>
+    <li>Connecting empirical findings to theory and design implications.</li>
+  </ul>
+</div>
 
-        <div class="card">
-          <h2>Reflections & learnings</h2>
-          <p>
-            This project deepened my understanding of how design can be used as a
-            research method in sensitive topics. It also sharpened my awareness of the
-            ethics involved when working with symbols tied to vulnerability and identity.
-          </p>
-        </div>
-      </div>
+<div class="card">
+  <h2>Design experiments</h2>
 
-      <aside>
-        <div class="side-card">
-          <h3>Project snapshot</h3>
-          <p><strong>Type:</strong> Master semester project (Digital Design)</p>
-          <p><strong>Focus:</strong> Stigma, visibility, critical interventions</p>
-        </div>
+  <h3>1️⃣ Perception & assumption testing</h3>
+  <p>
+    Early experiments explored how people interpret images of sunflower lanyard
+    wearers — revealing assumptions, stereotypes and emotional expectations.
+  </p>
 
-        <figure>
-          <img src="images/sunflower-installation-placeholder.png" alt="Placeholder for critical design installation related to the sunflower lanyard">
-          <figcaption>
-            Placeholder for photos of the critical design prototypes used to reflect stigma back onto observers.
-          </figcaption>
-        </figure>
-      </aside>
-    </div>
+  <h3>2️⃣ Public & semi-public interventions</h3>
+  <p>
+    Later prototypes acted as “social mirrors”: artefacts that reflected staring,
+    discomfort and judgement back onto observers, making power relations more visible.
+  </p>
+</div>
 
-    <footer>
-      © <span id="year"></span> Heidi Lindenskov Róadóttir
-    </footer>
-  </main>
+<div class="card">
+  <h2>Outcome</h2>
+  <p>
+    The project does not propose a “better” symbol — instead it provides a nuanced
+    understanding of how the sunflower lanyard produces both safety and exposure.
+  </p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <ul>
+    <li>Visibility can empower and stigmatise at the same time.</li>
+    <li>The lanyard invites expectations about behaviour and legitimacy.</li>
+    <li>Critical design can open conversations that everyday life normally hides.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Key learnings</h2>
+  <ul>
+    <li>
+      Design can be a powerful research method when dealing with vulnerability,
+      identity and social norms.
+    </li>
+    <li>
+      Symbols meant to help can also discipline and categorise people.
+    </li>
+    <li>
+      Ethical sensitivity is essential when working with disability contexts.
+    </li>
+  </ul>
+</div>
+
+</div>
+
+<aside>
+
+<div class="side-card">
+  <h3>Project snapshot</h3>
+  <p><strong>Type:</strong> Master semester project</p>
+  <p><strong>Programme:</strong> Cand.IT Digital Transformation / Design</p>
+  <p><strong>Focus:</strong> Stigma, visibility, critical interventions</p>
+  <p><strong>My role:</strong> Technical & analytical lead</p>
+</div>
+
+<figure>
+  <img src="images/sunflower-installation-placeholder.png">
+  <figcaption>
+    Placeholder — critical design prototypes used to expose staring, discomfort and judgement.
+  </figcaption>
+</figure>
+
+</aside>
+</div>
+
+<footer>
+  © <span id="year"></span> Heidi Lindenskov Róadóttir
+</footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
