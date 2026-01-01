@@ -118,18 +118,14 @@
     .hero-subtitle {
       font-size: 1rem;
       color: var(--text-muted);
-      max-width: 35rem;
-      line-height: 1.7;
-    }
-
-    .hero-subtitle strong {
-      font-weight: 600;
-      color: var(--accent-strong);
+      max-width: 32rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
     }
 
     .hero-highlight {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 6px;
       font-size: 0.85rem;
       padding: 6px 12px;
       border-radius: 999px;
@@ -138,11 +134,54 @@
       color: var(--text-muted);
     }
 
+    .hero-sub-bullets {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .hero-sub-bullets span::before {
+      content: "• ";
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.93rem;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .hero-card p {
+      margin: 0 0 8px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* FILTER-PILLS (nu under Projects) */
     .hero-pills {
-      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+    }
+
+    .projects-filters {
+      margin: 6px 0 18px;
     }
 
     .pill {
@@ -174,33 +213,6 @@
       background: #ffffff;
     }
 
-    .hero-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 18px 18px 14px;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.93rem;
-    }
-
-    .hero-card h2 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    .hero-card p {
-      margin: 0 0 8px;
-      color: var(--text-muted);
-    }
-
-    .hero-meta {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
     /* SECTIONS / PROJECTS */
     section {
       margin-top: 30px;
@@ -214,7 +226,7 @@
     }
 
     .section-intro {
-      margin: 0 0 16px;
+      margin: 0 0 10px;
       color: var(--text-muted);
       font-size: 0.93rem;
       max-width: 40rem;
@@ -348,7 +360,6 @@
       --timeline-progress: 0%;
     }
 
-    /* Baggrundslinje */
     .timeline::before {
       content: "";
       position: absolute;
@@ -359,7 +370,6 @@
       background: #e5e7eb;
     }
 
-    /* Den “aktive” del som bevæger sig med scroll */
     .timeline::after {
       content: "";
       position: absolute;
@@ -500,47 +510,29 @@
         <div class="hero-tag">Digital transformation · UX · data</div>
         <h1>Heidi Lindenskov Róadóttir</h1>
         <p class="hero-subtitle">
-          I move between <strong>data analysis</strong>, <strong>interaction &amp; critical design</strong>
-          and <strong>automation</strong>. I like working where messy real-world practice meets digital
-          systems – from children’s book clubs and football clubs to museums and hidden disability contexts.
+          I work with digital transformation through data, UX and automation – often in messy,
+          real-world settings like children’s book clubs, sports clubs and cultural institutions.
         </p>
         <span class="hero-highlight">
-          Master’s student in Digital Transformation, with a background in data analysis and digital design.
+          Cand.IT Digital Transformation · Data &amp; UX
         </span>
 
-        <!-- FILTER PILLS -->
-        <div class="hero-pills" id="filters">
-          <button class="pill pill--accent active" data-filter="all">
-            <span class="pill-dot"></span> All projects
-          </button>
-          <button class="pill" data-filter="digital">
-            <span class="pill-dot"></span> Digital transformation
-          </button>
-          <button class="pill" data-filter="ux">
-            <span class="pill-dot"></span> UX &amp; interaction
-          </button>
-          <button class="pill" data-filter="data">
-            <span class="pill-dot"></span> Data &amp; analytics
-          </button>
-          <button class="pill" data-filter="rpa">
-            <span class="pill-dot"></span> RPA &amp; automation
-          </button>
-          <button class="pill" data-filter="critical">
-            <span class="pill-dot"></span> Critical design
-          </button>
+        <div class="hero-sub-bullets">
+          <span>Data analysis &amp; visualization</span>
+          <span>Interaction &amp; critical design</span>
+          <span>Automation &amp; RPA</span>
         </div>
       </div>
 
       <aside class="hero-card">
         <h2>What I like working on</h2>
         <p>
-          Connecting <strong>qualitative insights</strong> with <strong>quantitative structure</strong>.
-          Turning complex processes – like memberships, disability symbols or match data – into
-          something people can understand and act on.
+          Connecting qualitative insights with quantitative structure – so organisational processes
+          and user experiences become easier to understand and act on.
         </p>
         <p>
-          I enjoy projects where technology is not just efficient, but also <strong>humane,
-          situated and a little provocative</strong>.
+          I’m especially interested in projects where technology needs to be careful, contextual
+          and supportive of people’s judgement.
         </p>
         <div class="hero-meta">
           Comfortable with R, basic Python, UX methods, research-through-design and Power Automate.
@@ -553,9 +545,31 @@
   <section id="projects">
     <h2>Projects</h2>
     <p class="section-intro">
-      A mix of bachelor and master level work spanning NLP, sports analytics, critical design,
+      Selected bachelor and master level work spanning NLP, sports analytics, critical design,
       tangible interaction and RPA.
     </p>
+
+    <!-- FILTERS -->
+    <div class="hero-pills projects-filters" id="filters">
+      <button class="pill pill--accent active" data-filter="all">
+        <span class="pill-dot"></span> All projects
+      </button>
+      <button class="pill" data-filter="digital">
+        <span class="pill-dot"></span> Digital transformation
+      </button>
+      <button class="pill" data-filter="ux">
+        <span class="pill-dot"></span> UX &amp; interaction
+      </button>
+      <button class="pill" data-filter="data">
+        <span class="pill-dot"></span> Data &amp; analytics
+      </button>
+      <button class="pill" data-filter="rpa">
+        <span class="pill-dot"></span> RPA &amp; automation
+      </button>
+      <button class="pill" data-filter="critical">
+        <span class="pill-dot"></span> Critical design
+      </button>
+    </div>
 
     <div class="projects-grid">
 
@@ -600,7 +614,7 @@
         </div>
       </article>
 
-      <!-- LumiBreath -->
+      <!-- LumiBreath (nu før EchoGuide) -->
       <article class="project" data-category="digital ux">
         <div class="project-media">
           <img src="images/lumibreath.jpg" alt="LumiBreath interactive breathing lamp" />
@@ -619,8 +633,8 @@
           <a href="lumibreath.html" class="read-more">Read more →</a>
         </div>
       </article>
-      
-      <!-- EchoGuide  -->
+
+      <!-- EchoGuide -->
       <article class="project" data-category="ux critical">
         <div class="project-media">
           <img src="images/echoguide.jpg" alt="EchoGuide accessible museum companion prototype" />
@@ -794,16 +808,32 @@ let showAllProjects = false;
 let currentFilter = 'all';
 
 function applyProjectVisibility() {
-  allProjects.forEach((p, index) => {
+  // projekter der matcher valgt filter
+  const matching = allProjects.filter(p => {
     const cats = (p.dataset.category || "").split(" ").map(c => c.trim()).filter(Boolean);
-    const matchesFilter = (currentFilter === "all" || cats.includes(currentFilter));
-    const withinTop = index < TOP_PROJECTS_COUNT;
-    const shouldShow = matchesFilter && (showAllProjects || withinTop);
-    p.style.display = shouldShow ? "" : "none";
+    return currentFilter === "all" || cats.includes(currentFilter);
   });
 
-  const anyHidden = allProjects.length > TOP_PROJECTS_COUNT && allProjects.some((p, index) => index >= TOP_PROJECTS_COUNT);
-  seeMoreBtn.style.display = anyHidden ? "inline-block" : "none";
+  // skjul alle først
+  allProjects.forEach(p => {
+    p.style.display = "none";
+  });
+
+  // hvor mange vi viser
+  const limit = showAllProjects
+    ? matching.length
+    : Math.min(TOP_PROJECTS_COUNT, matching.length);
+
+  matching.slice(0, limit).forEach(p => {
+    p.style.display = "";
+  });
+
+  // vis kun "see more"-knap hvis der er flere end 3 i den kategori
+  if (matching.length > TOP_PROJECTS_COUNT) {
+    seeMoreBtn.style.display = "inline-block";
+  } else {
+    seeMoreBtn.style.display = "none";
+  }
 }
 
 filterButtons.forEach(button => {
@@ -811,6 +841,8 @@ filterButtons.forEach(button => {
     filterButtons.forEach(b => b.classList.remove('pill--accent', 'active'));
     button.classList.add('pill--accent', 'active');
     currentFilter = button.dataset.filter || 'all';
+    showAllProjects = false; // reset når man skifter filter
+    seeMoreBtn.textContent = "See more projects";
     applyProjectVisibility();
   });
 });
@@ -821,7 +853,7 @@ seeMoreBtn.addEventListener('click', () => {
   applyProjectVisibility();
 });
 
-// initial visning – kun de 3 seneste
+// initial visning – 3 projekter i "all"
 applyProjectVisibility();
 </script>
 
