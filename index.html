@@ -35,9 +35,7 @@
       color: var(--accent);
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     /* NAVBAR – minimalistisk */
     .nav {
@@ -146,6 +144,33 @@
       content: "• ";
     }
 
+    /* Hero photo card */
+    .hero-photo {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo-inner {
+      text-align: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 999px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .hero-photo-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Card genbruges til “What I like…” sektionen */
     .hero-card {
       background: #ffffff;
       border-radius: 16px;
@@ -153,18 +178,15 @@
       border: 1px solid var(--border-subtle);
       font-size: 0.93rem;
     }
-
     .hero-card h2 {
       margin: 0 0 8px;
       font-size: 1.05rem;
       font-weight: 600;
     }
-
     .hero-card p {
       margin: 0 0 8px;
       color: var(--text-muted);
     }
-
     .hero-meta {
       margin-top: 8px;
       padding-top: 8px;
@@ -173,7 +195,11 @@
       color: var(--text-muted);
     }
 
-    /* FILTER-PILLS (nu under Projects) */
+    .focus-section {
+      margin-top: 10px;
+    }
+
+    /* FILTER-PILLS (under Projects) */
     .hero-pills {
       display: flex;
       flex-wrap: wrap;
@@ -524,22 +550,35 @@
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h2>What I like working on</h2>
-        <p>
-          Connecting qualitative insights with quantitative structure – so organisational processes
-          and user experiences become easier to understand and act on.
-        </p>
-        <p>
-          I’m especially interested in projects where technology needs to be careful, contextual
-          and supportive of people’s judgement.
-        </p>
-        <div class="hero-meta">
-          Comfortable with R, basic Python, UX methods, research-through-design and Power Automate.
+      <!-- FOTO AF DIG -->
+      <aside class="hero-photo">
+        <div class="hero-photo-inner">
+          <img src="images/heidi.jpg" alt="Portrait of Heidi Lindenskov Róadóttir" />
+          <div class="hero-photo-caption">
+            Based in the Nordics · working across data, UX and digital transformation.
+          </div>
         </div>
       </aside>
     </div>
   </header>
+
+  <!-- WHAT I LIKE WORKING ON – flyttet herned -->
+  <section class="focus-section">
+    <div class="hero-card">
+      <h2>What I like working on</h2>
+      <p>
+        Connecting qualitative insights with quantitative structure – so organisational processes
+        and user experiences become easier to understand and act on.
+      </p>
+      <p>
+        I’m especially interested in projects where technology needs to be careful, contextual
+        and supportive of people’s judgement.
+      </p>
+      <div class="hero-meta">
+        Comfortable with R, basic Python, UX methods, research-through-design and Power Automate.
+      </div>
+    </div>
+  </section>
 
   <!-- PROJECTS -->
   <section id="projects">
@@ -614,7 +653,7 @@
         </div>
       </article>
 
-      <!-- LumiBreath (nu før EchoGuide) -->
+      <!-- LumiBreath -->
       <article class="project" data-category="digital ux">
         <div class="project-media">
           <img src="images/lumibreath.jpg" alt="LumiBreath interactive breathing lamp" />
@@ -808,18 +847,13 @@ let showAllProjects = false;
 let currentFilter = 'all';
 
 function applyProjectVisibility() {
-  // projekter der matcher valgt filter
   const matching = allProjects.filter(p => {
     const cats = (p.dataset.category || "").split(" ").map(c => c.trim()).filter(Boolean);
     return currentFilter === "all" || cats.includes(currentFilter);
   });
 
-  // skjul alle først
-  allProjects.forEach(p => {
-    p.style.display = "none";
-  });
+  allProjects.forEach(p => { p.style.display = "none"; });
 
-  // hvor mange vi viser
   const limit = showAllProjects
     ? matching.length
     : Math.min(TOP_PROJECTS_COUNT, matching.length);
@@ -828,7 +862,6 @@ function applyProjectVisibility() {
     p.style.display = "";
   });
 
-  // vis kun "see more"-knap hvis der er flere end 3 i den kategori
   if (matching.length > TOP_PROJECTS_COUNT) {
     seeMoreBtn.style.display = "inline-block";
   } else {
@@ -841,7 +874,7 @@ filterButtons.forEach(button => {
     filterButtons.forEach(b => b.classList.remove('pill--accent', 'active'));
     button.classList.add('pill--accent', 'active');
     currentFilter = button.dataset.filter || 'all';
-    showAllProjects = false; // reset når man skifter filter
+    showAllProjects = false;
     seeMoreBtn.textContent = "See more projects";
     applyProjectVisibility();
   });
@@ -853,7 +886,6 @@ seeMoreBtn.addEventListener('click', () => {
   applyProjectVisibility();
 });
 
-// initial visning – 3 projekter i "all"
 applyProjectVisibility();
 </script>
 
