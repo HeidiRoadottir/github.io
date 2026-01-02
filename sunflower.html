@@ -146,6 +146,67 @@ figure figcaption{
   padding:8px 10px;
 }
 
+/* carousels */
+.carousel{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid var(--border);
+  padding:12px;
+  margin-bottom:14px;
+}
+
+.carousel h3{
+  margin:4px 0 8px;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--accent);
+}
+
+.carousel-frame{
+  width:100%;
+  aspect-ratio: 4 / 3;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#e5e7eb;
+  position:relative;
+}
+
+.carousel-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.carousel-frame img.active{
+  display:block;
+}
+
+.carousel-controls{
+  margin-top:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.carousel-btn{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  cursor:pointer;
+}
+
+.carousel-btn:hover{
+  background:#f3f4f6;
+}
+
+.carousel-indicator{
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
 footer{
   margin-top:32px;
   padding-top:10px;
@@ -288,47 +349,39 @@ footer{
   <p><strong>My role:</strong> Technical & analytical lead</p>
 </div>
 
-<figure>
-  <img src="images/solsikke/Boxed Stigma_kredsløbsdiagram.png">
-  <figcaption>
-    Set up of Boxed Stigma experiment - Wiring diagramme
-  </figcaption>
-</figure>
-  
-<figure>
-  <img src="images/solsikke/IMG_6164.jpg">
-  <figcaption>
-    Set up of Boxed Stigma experiment - Wiring
-  </figcaption>
-</figure>
-  
-<figure>
-  <img src="images/solsikke/IMG_6168.jpg">
-  <figcaption>
-    Set up of Boxed Stigma experiment - Completed
-  </figcaption>
-</figure>
-  
-  <figure>
-  <img src="images/solsikke/IMG_6576 2.JPG">
-  <figcaption>
-    Set up of Staring Right Back experiment 1
-  </figcaption>
-</figure>
-  
-<figure>
-  <img src="images/solsikke/IMG_6605 2.JPG">
-  <figcaption>
-    Set up of Staring Right Back experiment 2
-  </figcaption>
-</figure>
-  
-  <figure>
-  <img src="images/solsikke/IMG_6608 2.JPG">
-  <figcaption>
-    Set up of Staring Right Back experiment 3
-  </figcaption>
-</figure>
+<!-- BOXED STIGMA CAROUSEL -->
+<div class="carousel">
+  <h3>Boxed Stigma</h3>
+
+  <div class="carousel-frame" data-carousel="boxed">
+    <img src="images/solsikke/Boxed Stigma_kredsløbsdiagram.png" alt="Boxed Stigma wiring diagram">
+    <img src="images/solsikke/IMG_6164.jpg" alt="Boxed Stigma wiring setup">
+    <img src="images/solsikke/IMG_6168.jpg" alt="Boxed Stigma completed build">
+  </div>
+
+  <div class="carousel-controls">
+    <button class="carousel-btn" data-prev="boxed">←</button>
+    <span class="carousel-indicator" data-indicator="boxed">1 / 3</span>
+    <button class="carousel-btn" data-next="boxed">→</button>
+  </div>
+</div>
+
+<!-- STARING RIGHT BACK CAROUSEL -->
+<div class="carousel">
+  <h3>Staring Right Back</h3>
+
+  <div class="carousel-frame" data-carousel="staring">
+    <img src="images/solsikke/IMG_6576 2.JPG" alt="Staring Right Back setup 1">
+    <img src="images/solsikke/IMG_6605 2.JPG" alt="Staring Right Back setup 2">
+    <img src="images/solsikke/IMG_6608 2.JPG" alt="Staring Right Back setup 3">
+  </div>
+
+  <div class="carousel-controls">
+    <button class="carousel-btn" data-prev="staring">←</button>
+    <span class="carousel-indicator" data-indicator="staring">1 / 3</span>
+    <button class="carousel-btn" data-next="staring">→</button>
+  </div>
+</div>
 
 </aside>
 </div>
@@ -341,6 +394,34 @@ footer{
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+function setupCarousel(name){
+  const frame = document.querySelector(`[data-carousel="${name}"]`);
+  const images = Array.from(frame.querySelectorAll("img"));
+  const indicator = document.querySelector(`[data-indicator="${name}"]`);
+  let index = 0;
+
+  function update(){
+    images.forEach(img => img.classList.remove("active"));
+    images[index].classList.add("active");
+    indicator.textContent = `${index+1} / ${images.length}`;
+  }
+
+  document.querySelector(`[data-prev="${name}"]`).onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    update();
+  };
+
+  document.querySelector(`[data-next="${name}"]`).onclick = () => {
+    index = (index + 1) % images.length;
+    update();
+  };
+
+  update();
+}
+
+setupCarousel("boxed");
+setupCarousel("staring");
 </script>
 
 </body>
