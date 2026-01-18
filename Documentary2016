@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>At liva við tí — Documentary · Heidi Lindenskov Róadóttir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root{
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --text-main:#111827;
+      --text-muted:#6b7280;
+      --accent:#111827;
+      --border:#e5e7eb;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text-main);
+      line-height:1.7;
+    }
+
+    main{
+      max-width:1040px;
+      margin:0 auto;
+      padding:28px 18px 60px;
+    }
+
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .back{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      display:inline-block;
+      margin-bottom:8px;
+    }
+
+    h1{
+      margin:10px 0 4px;
+      font-size:clamp(2.1rem,3vw,2.6rem);
+      font-weight:600;
+    }
+
+    .meta{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-bottom:12px;
+    }
+
+    .hero-sub{
+      color:var(--text-muted);
+      max-width:42rem;
+      margin-bottom:18px;
+      font-size:0.98rem;
+    }
+
+    .layout{
+      display:grid;
+      gap:18px;
+      margin-top:16px;
+    }
+
+    @media(min-width:880px){
+      .layout{
+        grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      }
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid var(--border);
+      padding:16px;
+      margin-bottom:14px;
+      font-size:0.96rem;
+    }
+
+    .card h2{
+      margin:0 0 6px;
+      font-size:1.1rem;
+      font-weight:600;
+    }
+
+    .side-card{
+      background:#fff;
+      border-radius:12px;
+      border:1px solid var(--border);
+      padding:14px;
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-bottom:14px;
+    }
+
+    .side-card h3{
+      margin:0 0 6px;
+      font-size:1rem;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    .video-wrapper{
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#e5e7eb;
+    }
+
+    footer{
+      margin-top:32px;
+      padding-top:10px;
+      border-top:1px solid var(--border);
+      font-size:0.8rem;
+      color:var(--text-muted);
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <a href="index.html#other" class="back">← Back</a>
+
+  <h1>At liva við tí</h1>
+  <div class="meta">
+    Documentary film · Storytelling · Sensitive topics · 10:17 min
+  </div>
+
+  <p class="hero-sub">
+    <em>At liva við tí</em> (Living with it) is a short documentary following two women
+    with very different experiences of death. One has lost her mother to cancer, while
+    the other has survived two suicide attempts. The film explores how these contrasting
+    encounters with death shape their perspectives on life, grief and survival.
+  </p>
+
+  <div class="layout">
+    <div>
+
+      <div class="card">
+        <h2>Concept & focus</h2>
+        <p>
+          Rather than focusing on death itself, the documentary centres on how people
+          <strong>live with it</strong> — how loss, trauma and survival continue to exist
+          in everyday life long after the defining event has passed.
+        </p>
+        <p>
+          By placing these two stories side by side, the film highlights how death can be
+          both something that happens to us and something we actively survive.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>My role</h2>
+        <ul>
+          <li>Concept development and thematic framing</li>
+          <li>Research and interview preparation</li>
+          <li>All filming and sound recording</li>
+          <li>Editing and narrative structure</li>
+          <li>Final production and publishing</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Reflection</h2>
+        <p>
+          Creating this documentary required working independently across concept
+          development, filming and editing while handling highly sensitive subject
+          matter. The project strengthened my ability to structure complex, emotional
+          narratives and make careful ethical decisions throughout the production process.
+        </p>
+      </div>
+
+    </div>
+
+    <aside>
+
+      <div class="side-card">
+        <h3>Project snapshot</h3>
+        <p><strong>Format:</strong> Short documentary</p>
+        <p><strong>Length:</strong> 10:17 minutes</p>
+        <p><strong>Language:</strong> Faroese</p>
+        <p><strong>Theme:</strong> Death, grief, survival</p>
+        <p><strong>Role:</strong> Concept, filming & editing</p>
+      </div>
+
+      <div class="video-wrapper" style="aspect-ratio:16/9;">
+        <iframe
+          src="https://www.youtube.com/embed/T2ZWv8AbSf4"
+          title="At liva við tí — Documentary"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p style="margin-top:8px;">
+        <a href="https://www.youtube.com/watch?v=T2ZWv8AbSf4" target="_blank" rel="noopener">
+          Watch on YouTube →
+        </a>
+      </p>
+
+    </aside>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Heidi Lindenskov Róadóttir
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
